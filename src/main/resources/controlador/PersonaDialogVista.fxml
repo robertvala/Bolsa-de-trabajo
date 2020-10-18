@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" focusTraversable="true" maxHeight="541.0" maxWidth="550.0" minHeight="345.0" minWidth="185.0" prefHeight="541.0" prefWidth="550.0" snapToPixel="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PersonaDialogControlador">
+   <children>
+      <Label layoutX="17.0" layoutY="213.0" text="Fecha de Nacimiento" />
+      <TextField fx:id="txtApellidos" layoutX="19.0" layoutY="160.0" prefHeight="29.0" prefWidth="187.0" />
+      <Label layoutX="17.0" layoutY="126.0" text="Apellidos" />
+      <Label layoutX="19.0" layoutY="40.0" text="Nombres" />
+      <TextField fx:id="txtNombre" layoutX="19.0" layoutY="73.0" prefHeight="29.0" prefWidth="187.0" />
+      <Button fx:id="btnGuardar" layoutX="349.0" layoutY="462.0" mnemonicParsing="false" onAction="#guardar" prefHeight="25.0" prefWidth="149.0" text="Guardar" />
+      <Button fx:id="btnSalir" layoutX="349.0" layoutY="500.0" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="149.0" text="Salir" />
+      <Label layoutX="342.0" layoutY="44.0" text="Equipo Actual" />
+      <TextField fx:id="txtEquipo" layoutX="344.0" layoutY="73.0" />
+      <Label layoutX="343.0" layoutY="126.0" text="Posicion" />
+      <TextField fx:id="txtPosicion" layoutX="345.0" layoutY="155.0" />
+      <Label layoutX="344.0" layoutY="203.0" text="Cedula" />
+      <TextField fx:id="txtCedula" layoutX="346.0" layoutY="232.0" />
+      <Label layoutX="18.0" layoutY="298.0" text="Pais" />
+      <TextField fx:id="txtPais" layoutX="20.0" layoutY="327.0" prefHeight="29.0" prefWidth="187.0" />
+      <Label layoutX="19.0" layoutY="386.0" text="Ciudad" />
+      <TextField fx:id="txtCiudad" layoutX="21.0" layoutY="415.0" prefHeight="29.0" prefWidth="187.0" />
+      <Label layoutX="20.0" layoutY="462.0" text="Sexo" />
+      <Label layoutX="343.0" layoutY="288.0" text="Celular" />
+      <TextField fx:id="txtCelular" layoutX="345.0" layoutY="317.0" />
+      <Label layoutX="346.0" layoutY="367.0" text="Correo electrónico" />
+      <TextField fx:id="txtCorreo" layoutX="348.0" layoutY="396.0" />
+      <DatePicker fx:id="dateFechaNacimiento" layoutX="20.0" layoutY="247.0" />
+      <ChoiceBox fx:id="selectSexo" layoutX="24.0" layoutY="486.0" prefHeight="29.0" prefWidth="187.0" />
+   </children>
+</AnchorPane>
