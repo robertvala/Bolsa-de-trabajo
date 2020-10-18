@@ -5,10 +5,12 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rober
  */
-public class Tarjeta {
+public class Tarjeta implements Serializable{
     
 }

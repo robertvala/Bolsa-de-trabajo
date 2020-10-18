@@ -1,8 +1,17 @@
 package controlador;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -54,18 +63,32 @@ public class PersonasController implements Initializable {
     private TableColumn colCiudad;
     @FXML
     private TableColumn colImagen;
+    
+    private ArrayList<Jugador> listaJugadores=new ArrayList<>();;
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        File file= new File("datos.ser");
+        try{
+            file.createNewFile();
+        }
+        catch( IOException E){
+            System.err.println("No se pudo crear el archivo"+"datos.ser");
+        }
+        
         jugadores = FXCollections.observableArrayList();
+        //jugadores=leerSerializado();
+        listaJugadores=deserializar();
+        System.out.println(listaJugadores);
+        this.jugadores=listToObservable(listaJugadores);
         filtroJugadores = FXCollections.observableArrayList();
         
         this.tblJugadores.setItems(jugadores);
-        
-
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombres"));
         this.colApellidos.setCellValueFactory(new PropertyValueFactory("apellidos"));
         this.colEdad.setCellValueFactory(new PropertyValueFactory("edad"));
@@ -100,11 +123,15 @@ public class PersonasController implements Initializable {
             Jugador j = controlador.getJugador();
             if (j != null) {
                 jugadores.add(j);
+                listaJugadores.add(j);
                 if (j.getNombres().toLowerCase().contains(this.txtFiltrarNombre.getText().toLowerCase())) {
                     this.filtroJugadores.add(j);
                 }
                 this.tblJugadores.refresh();
+                serializar();
+                
             }
+            
 
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -147,7 +174,7 @@ public class PersonasController implements Initializable {
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setScene(scene);
                 stage.showAndWait();
-                
+
                 // cojo la persona devuelta
                 Jugador pSeleccionado = controlador.getJugador();
                 if (pSeleccionado != null) {
@@ -155,6 +182,7 @@ public class PersonasController implements Initializable {
                         this.filtroJugadores.remove(pSeleccionado);
                     }
                     this.tblJugadores.refresh();
+                    serializar();
                 }
 
             } catch (IOException e) {
@@ -183,8 +211,10 @@ public class PersonasController implements Initializable {
         } else {
             // Elimino la persona
             this.jugadores.remove(j);
+            this.listaJugadores.remove(j);
             this.filtroJugadores.remove(j);
             this.tblJugadores.refresh();
+            serializar();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
@@ -220,5 +250,41 @@ public class PersonasController implements Initializable {
         }
 
     }
+    
+    public ObservableList<Jugador> listToObservable(ArrayList<Jugador> listaJugadores ){
+        ObservableList<Jugador> jugadores = FXCollections.observableArrayList();
+        for(Jugador i: listaJugadores){
+            jugadores.add(i);
+        }
+        return jugadores;
+    }
+    
+    private void serializar(){
+         try(ObjectOutputStream salida= new ObjectOutputStream(new FileOutputStream("datos.ser"))){
+                    salida.writeObject(listaJugadores);
+                    salida.close();
+                }catch(FileNotFoundException e){
+                    System.err.println("No se encontro el archivo datos.ser");
+                }catch(IOException E){
+                    System.out.println("Se produjo un error al serializar");
+                }
+    }
+    
+    private ArrayList<Jugador> deserializar() {
+        ArrayList<Jugador> jugadores = new ArrayList<>() ;
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("datos.ser"))){
+                jugadores =   (ArrayList<Jugador>) ois.readObject();
+                return jugadores ;
+        } catch (FileNotFoundException ex) {
+            System.err.println("No se encontró el archivo "+"datos.ser");
+        } catch (ClassNotFoundException ex) {            
+            System.err.println("Error en el casting del objeto a deserializar");
+        } catch ( IOException ex) {
+            System.err.println("No hay objeto a deserializar o la lista está vacía. Cree al menos un jugador");
+            return jugadores;
+        }
+        return jugadores;
+    }
+
 
 }

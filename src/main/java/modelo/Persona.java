@@ -5,10 +5,11 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Persona {
+public class Persona implements Serializable{
 
     private String nombres;
     private String apellidos;

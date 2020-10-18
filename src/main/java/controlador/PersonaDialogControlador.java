@@ -6,6 +6,11 @@
 package controlador;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -153,10 +158,12 @@ public class PersonaDialogControlador implements Initializable {
                         
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText(null);
+                alert.setHeaderText(null);                                       
                 alert.setTitle("Informacion");
                 alert.setContentText("Se ha modificado correctamente");
                 alert.showAndWait();
+                
+                
 
             } else {
                 // insertando

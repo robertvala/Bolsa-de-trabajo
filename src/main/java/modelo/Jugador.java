@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,7 +16,7 @@ import javafx.collections.ObservableList;
  *
  * @author rober
  */
-public class Jugador {
+public class Jugador implements Serializable {
     private String equipo;
     private String posicion;
     private ArrayList<String> historial;
@@ -48,6 +49,7 @@ public class Jugador {
         this.ciudad = ciudad;
         this.sexo = sexo;
         this.urlImagen = urlImagen;
+        obternerEdad();
     }
 
     public Jugador(String equipo, String posicion, String nombres, String apellidos, LocalDate fechaNacimiento, int celular, int cedula, String correo, String pais, String ciudad, String sexo) {
@@ -62,6 +64,7 @@ public class Jugador {
         this.pais = pais;
         this.ciudad = ciudad;
         this.sexo = sexo;
+        obternerEdad();
     }
 
     public String getEquipo() {
@@ -261,6 +264,26 @@ public class Jugador {
         int annio = c1.get(Calendar.YEAR);
         int dia = c1.get(Calendar.DATE);
         int mes = c1.get(Calendar.MONTH);
+        String[] partes = this.fechaNacimiento.toString().split("-");
+        int annioNacimiento = Integer.parseInt(partes[0]);
+        int mesNacimiento = Integer.parseInt(partes[1]);
+        int diaNacimiento = Integer.parseInt(partes[2]);
+
+        if (mes - mesNacimiento < 0) {
+            this.edad = annio - annioNacimiento - 1;
+        }
+        if ((mes - mesNacimiento) == 0) {
+            if (dia - diaNacimiento > 0) {
+                this.edad = annio - annioNacimiento;
+            } else {
+                this.edad = annio - annioNacimiento - 1;
+            }
+        }
+        
+        else{
+            this.edad = annio - annioNacimiento;
+        }
+
         
     }
      
