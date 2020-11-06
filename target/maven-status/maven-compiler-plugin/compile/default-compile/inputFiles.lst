@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main\java\controlador\App.java
 C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main\java\controlador\PrimaryController.java
 C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main\java\modelo\Tarjeta.java
@@ -10,3 +11,17 @@ C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main
 C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main\java\modelo\Postulante.java
 C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main\java\controlador\IngresoTarjetaController.java
 C:\Users\rober\OneDrive\Escritorio\Proyecto de trabajo\Bolsa-de-trabajo\src\main\java\Firebase\ConexionFirebase.java
+=======
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\controlador\PersonaDialogControlador.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\Firebase\CRUDFirebase.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\modelo\Tarjeta.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\controlador\App.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\controlador\SecondaryController.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\modelo\Postulante.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\controlador\PersonasController.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\controlador\PrimaryController.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\modelos\Personas.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\Firebase\ConexionFirebase.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\modelo\Jugador.java
+C:\Users\himesama\Music\Bolsa-de-trabajo-main\Bolsa-de-trabajo\src\main\java\modelo\Persona.java
+>>>>>>> 25acfd3cb60f13c4977a869fc2e8c120e8c3d2f4

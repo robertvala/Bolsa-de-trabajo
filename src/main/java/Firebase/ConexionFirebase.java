@@ -21,7 +21,6 @@ import java.util.logging.Logger;
  */
 public class ConexionFirebase
 {
-    private Firestore bd=null;
   
     public Firestore iniciarFirebase()
     {
