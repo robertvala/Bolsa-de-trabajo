@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Hashtable;
 import java.util.Objects;
 import javafx.collections.ObservableList;
 
@@ -30,8 +31,10 @@ public class Jugador implements Serializable {
     private String correo;
     private String pais;
     private String ciudad;
+    private String liga;
     private String sexo;
     private String urlImagen;
+    
 
     public Jugador(String equipo, String posicion, ArrayList<String> historial, ObservableList<Tarjeta> tarjetas, String nombres, String apellidos, int edad, LocalDate fechaNacimiento, int celular, int cedula, String correo, String pais, String ciudad, String sexo, String urlImagen) {
         this.equipo = equipo;
@@ -52,6 +55,24 @@ public class Jugador implements Serializable {
         obternerEdad();
     }
 
+    public Jugador(String equipo, String posicion, String nombres, String apellidos, LocalDate fechaNacimiento, int celular, int cedula, String correo, String pais, String ciudad, String liga, String sexo) {
+        this.equipo = equipo;
+        this.posicion = posicion;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
+        this.celular = celular;
+        this.cedula = cedula;
+        this.correo = correo;
+        this.pais = pais;
+        this.ciudad = ciudad;
+        this.liga = liga;
+        this.sexo = sexo;
+    }
+    
+    
+
     public Jugador(String equipo, String posicion, String nombres, String apellidos, LocalDate fechaNacimiento, int celular, int cedula, String correo, String pais, String ciudad, String sexo) {
         this.equipo = equipo;
         this.posicion = posicion;
@@ -65,6 +86,14 @@ public class Jugador implements Serializable {
         this.ciudad = ciudad;
         this.sexo = sexo;
         obternerEdad();
+    }
+
+    public String getLiga() {
+        return liga;
+    }
+
+    public void setLiga(String liga) {
+        this.liga = liga;
     }
 
     public String getEquipo() {

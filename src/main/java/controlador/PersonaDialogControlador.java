@@ -66,6 +66,11 @@ public class PersonaDialogControlador implements Initializable {
     private TextField txtCorreo;
     
     private ObservableList<String> sexos;
+    @FXML
+    private ChoiceBox<String> selectLiga;
+    
+    private ObservableList<String> ligas;
+    
 
     /**
      * Initializes the controller class.
@@ -76,6 +81,11 @@ public class PersonaDialogControlador implements Initializable {
         sexos.add("Masculino");
         sexos.add("Fememino");
         selectSexo.setItems(sexos);
+        
+        ligas=FXCollections.observableArrayList();
+        ligas.add("Primera B");
+        ligas.add("Segunda categoria");
+        selectLiga.setItems(ligas);
 
     }
 
@@ -99,6 +109,7 @@ public class PersonaDialogControlador implements Initializable {
         this.txtCedula.setText(this.jugador.getCedula()+"");
         this.txtCorreo.setText(this.jugador.getCorreo());
         this.selectSexo.setValue(this.jugador.getSexo());
+        this.selectLiga.setValue(this.jugador.getLiga());
         //esto es para probar si se sube o no
         
         
@@ -127,13 +138,14 @@ public class PersonaDialogControlador implements Initializable {
         String sexo=this.selectSexo.getValue();
         LocalDate fechaNacimiento=this.dateFechaNacimiento.getValue();
         String equipo = this.txtEquipo.getText();
+        String liga= this.selectLiga.getValue();
         int celular=Integer.parseInt(this.txtCelular.getText());
         int cedula=Integer.parseInt(this.txtCedula.getText());
         
         
 
         // Creo la jugador
-        Jugador j = new Jugador(equipo,posicion,nombre, apellidos, fechaNacimiento,celular,cedula,correo,pais,ciudad,sexo );
+        Jugador j = new Jugador(equipo,posicion,nombre, apellidos, fechaNacimiento,celular,cedula,correo,pais,ciudad,liga,sexo );
 
         // Compruebo si la jugador existe
         if (!jugadores.contains(j)) {

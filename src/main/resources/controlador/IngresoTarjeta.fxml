@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="35.0" prefWidth="1081.0" text="Ingreso de tarjeta" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="Microsoft New Tai Lue" size="24.0" />
+         </font>
+         <padding>
+            <Insets left="540.0" />
+         </padding>
+      </Label>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" spacing="40.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="MatchStart" />
+                        <Spinner fx:id="spMatchStart" accessibleRole="INCREMENT_BUTTON" editable="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Substituted" />
+                        <ChoiceBox fx:id="ChoiceSubstituted" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Coming off" />
+                        <ChoiceBox fx:id="ChoiceComingOff" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Minutes on field" />
+                        <Spinner fx:id="spMinutesOnField" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Minutes tagged" />
+                        <Spinner fx:id="spMinutesTagged" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Goals" />
+                        <Spinner fx:id="spGoals" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Assits" />
+                        <Spinner fx:id="spAssists" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Shots" />
+                        <Spinner fx:id="spShots" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Headshots" />
+                        <Spinner fx:id="spHeadshots" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Yellow cards" />
+                        <Spinner fx:id="spYellowCards" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Red cards" />
+                        <Spinner fx:id="spRedCards" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Direct red cards" />
+                        <ChoiceBox fx:id="ChoiceDirectRedCard" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Penalties" />
+                        <Spinner fx:id="spPenalties" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Linkup Plays" />
+                        <Spinner fx:id="spLinkupPlays" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Duels" />
+                        <Spinner fx:id="spDuels" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Duels won" />
+                        <Spinner fx:id="spDuelsWon" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Defensive duels " />
+                        <Spinner fx:id="spDefensiveDuels" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="AerialDuelsWon" />
+                        <Spinner fx:id="spAerialDuelsWon" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Fouls" />
+                        <Spinner fx:id="spFouls" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Passes" />
+                        <Spinner fx:id="spPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful passes" />
+                        <Spinner fx:id="spSuccesfulPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Smart Passes" />
+                        <Spinner fx:id="spSmartPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="34.0" prefWidth="242.0" text="Succesful smart Passes" />
+                        <Spinner fx:id="spSuccesfulSmartPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Passes to final Third" />
+                        <Spinner fx:id="spPassesToFinalThird" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="34.0" prefWidth="242.0" text="Succesful passes to final third" />
+                        <Spinner fx:id="spSuccesfulPassesToFinalThird" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Crosses" />
+                        <Spinner fx:id="spCrosses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful crosses" />
+                        <Spinner fx:id="spSuccesfulCrosses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Forward passes" />
+                        <Spinner fx:id="spForwardPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful forward passes" />
+                        <Spinner fx:id="spSuccesFullForwadPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Backpasses" />
+                        <Spinner fx:id="spBackpasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful back passes" />
+                        <Spinner fx:id="spSuccesfulBackpasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Through passes" />
+                        <Spinner fx:id="spThroughPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Key passes" />
+                        <Spinner fx:id="spKeyPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful keypasses" />
+                        <Spinner fx:id="spSuccesfulKeypasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Vertical passes" />
+                        <Spinner fx:id="spVerticalPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful vertical passes" />
+                        <Spinner fx:id="spSuccesfulVerticalPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Long passes" />
+                        <Spinner fx:id="spLongPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful long passes" />
+                        <Spinner fx:id="spSuccesfulLongPasses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Dribbles" />
+                        <Spinner fx:id="spDribbles" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful dribbles" />
+                        <Spinner fx:id="spSuccesfulDribles" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Interceptions" />
+                        <Spinner fx:id="spInterceptions" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Defensive actions" />
+                        <Spinner fx:id="spDefensiveActions" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful defensive actions" />
+                        <Spinner fx:id="spSuccesfulDefensiceActions" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Attacking actions" />
+                        <Spinner fx:id="spAttackinhActions" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful attacking actions" />
+                        <Spinner fx:id="spSuccesfulAttackingActions" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Free kicks" />
+                        <Spinner fx:id="spFreekicks" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Free kicks on target" />
+                        <Spinner fx:id="spFreekickOnTarget" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Direct free kicks on target" />
+                        <Spinner fx:id="spDirectFreeKicksOnTarget" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Corners" />
+                        <Spinner fx:id="spCorners" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful penalties" />
+                        <Spinner fx:id="spSuccesfulPenalties" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Succesful Linkup plays" />
+                        <Spinner fx:id="spSuccesfulLinkupPlays" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Accelerations" />
+                        <Spinner fx:id="spAccelerations" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Pressing duels won" />
+                        <Spinner fx:id="spPressingDuels" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Missed balls" />
+                        <Spinner fx:id="spMissedBalls" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Shot assists" />
+                        <Spinner fx:id="spShotAssist" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Shot on target" />
+                        <Spinner fx:id="spShotOnTarget" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Recoveries" />
+                        <Spinner fx:id="spRecoveries" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Opponent half recoveries" />
+                        <Spinner fx:id="spOpponentHalfRecoveries" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Dangerous opponent half recoverie" />
+                        <Spinner fx:id="spDangerousOpponentHalfRecoveries" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Looses" />
+                        <Spinner fx:id="spLooses" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Own half recoveries" />
+                        <Spinner fx:id="spOwnHalfRecoveries" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Dangerous own half recoveries" />
+                        <Spinner fx:id="spDangerousOwnHalfRecoveries" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Field aerials duels" />
+                        <Spinner fx:id="spFieldAerialDuels" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Field duels won" />
+                        <Spinner fx:id="spFieldDuelsWon" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Aerial duels" />
+                        <Spinner fx:id="spAerialDuelsWon" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Loose ball duels" />
+                        <Spinner fx:id="spLoosBallDuels1" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Loose ball duels won" />
+                        <Spinner fx:id="spLooseBallDuelsWon" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Injuries" />
+                        <ChoiceBox fx:id="ChoiceDirectRedCard1" prefWidth="150.0" />
+                     </children></HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Offensive duels won" />
+                        <Spinner fx:id="spLooseBallDuelsWon1" />
+                     </children></HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+   </children>
+</VBox>
