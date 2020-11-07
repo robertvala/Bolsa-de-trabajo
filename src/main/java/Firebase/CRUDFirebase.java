@@ -8,6 +8,7 @@ package Firebase;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
+import controlador.App;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,10 +37,10 @@ public class CRUDFirebase {
         Map<String, Object> docJugador = new HashMap<>();
         docJugador.put("Equipo", jugador.getEquipo());
         docJugador.put("Posicion", jugador.getPosicion());
-        docJugador.put("Historial", jugador.getHistorial());
+        //docJugador.put("Historial", jugador.getHistorial());
         docJugador.put("Tarjetas", jugador.getTarjetas());
         docJugador.put("Nombre", jugador.getNombres());
-        docJugador.put("Nombre", jugador.getApellidos());
+        docJugador.put("Apellidos", jugador.getApellidos());
         docJugador.put("Fecha de nacimiento", jugador.getFechaNacimiento());
         docJugador.put("Celular", jugador.getCelular());
         docJugador.put("Cedula", jugador.getCedula());
@@ -47,7 +48,7 @@ public class CRUDFirebase {
         docJugador.put("Pais", jugador.getPais());
         docJugador.put("Ciudad", jugador.getCiudad());
         docJugador.put("Sexo", jugador.getSexo());
-        docJugador.put("UrlImagen", jugador.getUrlImagen());
+       
         
         
        
