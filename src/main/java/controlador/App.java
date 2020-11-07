@@ -1,5 +1,7 @@
 package controlador;
 
+import Firebase.ConexionFirebase;
+import com.google.cloud.firestore.Firestore;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,14 +14,23 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
+    
+    //private final ConexionFirebase conexionFirebase= new ConexionFirebase();
+    //public static Firestore bd;
+    
+            
 
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("IngresoTarjeta"), 1080, 720);
+        System.out.println("javafx.runtime.version: " + System.getProperties().get("javafx.runtime.version")); System.exit(0);
+        
+        scene = new Scene(loadFXML("MenuPrincipal"));
         stage.setScene(scene);
         stage.show();
+        
+        //bd=conexionFirebase.iniciarFirebase();
     }
 
     static void setRoot(String fxml) throws IOException {

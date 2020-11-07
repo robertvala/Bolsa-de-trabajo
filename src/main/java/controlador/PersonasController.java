@@ -1,5 +1,6 @@
 package controlador;
 
+import Firebase.CRUDFirebase;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -66,6 +67,8 @@ public class PersonasController implements Initializable {
     
     private ArrayList<Jugador> listaJugadores=new ArrayList<>();;
     
+    //private final CRUDFirebase cRUDFirebase = new CRUDFirebase();
+  
 
     /**
      * Initializes the controller class.
@@ -98,6 +101,8 @@ public class PersonasController implements Initializable {
     }
 
     @FXML
+  
+    
     private void agregarPersona(ActionEvent event) {
 
         try {
@@ -128,7 +133,11 @@ public class PersonasController implements Initializable {
                     this.filtroJugadores.add(j);
                 }
                 this.tblJugadores.refresh();
+                
+               // cRUDFirebase.addFirebase(j);
+
                 serializar();
+                
                 
             }
             

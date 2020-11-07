@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label prefHeight="35.0" prefWidth="1081.0" text="Ingreso de tarjeta" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
@@ -123,12 +122,6 @@
                      <children>
                         <Label prefHeight="36.0" prefWidth="242.0" text="Defensive duels " />
                         <Spinner fx:id="spDefensiveDuels" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
-                     <children>
-                        <Label prefHeight="36.0" prefWidth="242.0" text="Offensive duels won" />
-                        <Spinner fx:id="spOffensiveDuelsWon" />
                      </children>
                   </HBox>
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
@@ -446,8 +439,16 @@
                         <Spinner fx:id="spLooseBallDuelsWon" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Injuries" />
+                        <ChoiceBox fx:id="ChoiceDirectRedCard1" prefWidth="150.0" />
+                     </children></HBox>
+                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="242.0" text="Offensive duels won" />
+                        <Spinner fx:id="spLooseBallDuelsWon1" />
+                     </children></HBox>
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
                </children>
@@ -457,5 +458,6 @@
             <Insets left="5.0" right="5.0" />
          </padding>
       </HBox>
+      <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
    </children>
 </VBox>
