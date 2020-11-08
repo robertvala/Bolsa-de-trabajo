@@ -17,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -35,15 +37,21 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private Button btnPostulantes;
     @FXML
-    private ListView<?> tblJugadores;
-    @FXML
-    private ListView<?> tblTarjetas;
+    private ImageView imgLogo;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
+       Image image1 = new Image(App.class.getResourceAsStream("logo.png"));
+        imgLogo=new ImageView();
+        imgLogo.setImage(image1);
+        imgLogo.setX(50);
+        imgLogo.setY(50);
+        
         // TODO
     }   
     
