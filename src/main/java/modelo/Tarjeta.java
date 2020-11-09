@@ -96,6 +96,10 @@ public class Tarjeta implements Serializable{
     private int dangerousOwnHalfRecoveries;
     private int fieldAerialDuels;
     private int fieldDuelsWon;
+
+    public String getIdtarjeta() {
+        return Idtarjeta;
+    }
     
     
     

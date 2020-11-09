@@ -59,6 +59,19 @@ public class MenuPrincipalController implements Initializable {
 
     @FXML
     private void menuTarjetas(MouseEvent event) {
+          try {
+            FXMLLoader loader= new FXMLLoader(App.class.getResource("Tarjetas.fxml"));
+            Parent root= loader.load();
+            Scene scene= new Scene(root);
+            Stage stage= new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);
+            stage.showAndWait();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @FXML

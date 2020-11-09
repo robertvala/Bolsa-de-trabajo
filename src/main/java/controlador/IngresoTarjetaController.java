@@ -174,6 +174,12 @@ public class IngresoTarjetaController implements Initializable {
         spMatchStart.setValueFactory(ivf);
         // TODO
     }    
+<<<<<<< Updated upstream
+    public void initAtributtes(ObservableList<Tarjeta> tarjetas,Tarjeta tarjeta) {
+        
+    }
+=======
+>>>>>>> Stashed changes
     public void initAtributtes(ObservableList<Tarjeta> tarjetas) {
         this.tarjetas = tarjetas;
     }

@@ -8,7 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< Updated upstream
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.IngresoTarjetaController">
+=======
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.IngresoTarjetaController">
+>>>>>>> Stashed changes
    <children>
       <Label prefHeight="35.0" prefWidth="1081.0" text="Ingreso de tarjeta" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
          <font>

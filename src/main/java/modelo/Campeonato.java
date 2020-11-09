@@ -6,6 +6,7 @@
 package modelo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,14 +16,11 @@ public class Campeonato {
     private LocalDate fechainicio;
     private LocalDate fechaFin;
     private String nombre;
+    private int valorWFV;
+    private ArrayList<Equipo> equipos;
     private String tipo;
 
-    public Campeonato(LocalDate fechainicio, LocalDate fechaFin, String nombre, String tipo) {
-        this.fechainicio = fechainicio;
-        this.fechaFin = fechaFin;
-        this.nombre = nombre;
-        this.tipo = tipo;
-    }
+   
 
     public LocalDate getFechainicio() {
         return fechainicio;
