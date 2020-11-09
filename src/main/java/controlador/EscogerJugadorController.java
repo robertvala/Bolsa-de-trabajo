@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author rober
  */
-public class IngresoTarjetaController implements Initializable {
+public class EscogerJugadorController implements Initializable {
 
     /**
      * Initializes the controller class.

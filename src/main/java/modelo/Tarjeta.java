@@ -6,12 +6,19 @@
 package modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
  *
  * @author rober
  */
 public class Tarjeta implements Serializable{
+    //Identificacion de tarjeta
+    private Jugador jugador;
+    private Partido partido;
+    private LocalDate fecha;
+    private String Idtarjeta;
+    
     //informacion del jugador
     private boolean matchStart;
     private boolean substituted;
@@ -89,6 +96,10 @@ public class Tarjeta implements Serializable{
     private int dangerousOwnHalfRecoveries;
     private int fieldAerialDuels;
     private int fieldDuelsWon;
+
+    public String getIdtarjeta() {
+        return Idtarjeta;
+    }
     
     
     

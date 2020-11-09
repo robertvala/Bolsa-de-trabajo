@@ -24,7 +24,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        System.out.println("javafx.runtime.version: " + System.getProperties().get("javafx.runtime.version")); System.exit(0);
+        //System.out.println("javafx.runtime.version: " + System.getProperties().get("javafx.runtime.version")); System.exit(0);
         
         scene = new Scene(loadFXML("MenuPrincipal"));
         stage.setScene(scene);
