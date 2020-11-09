@@ -172,14 +172,15 @@ public class IngresoTarjetaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         SpinnerValueFactory.IntegerSpinnerValueFactory ivf= new SpinnerValueFactory.IntegerSpinnerValueFactory(0,10000000,0,1);
         spMatchStart.setValueFactory(ivf);
-        // TODO
-    }    
-<<<<<<< Updated upstream
+    }
+    
     public void initAtributtes(ObservableList<Tarjeta> tarjetas,Tarjeta tarjeta) {
+        this.tarjetas=tarjetas;
+        this.tarjeta=tarjeta;
         
     }
-=======
->>>>>>> Stashed changes
+        // TODO
+
     public void initAtributtes(ObservableList<Tarjeta> tarjetas) {
         this.tarjetas = tarjetas;
     }

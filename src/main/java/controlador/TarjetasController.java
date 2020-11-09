@@ -9,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -64,35 +65,13 @@ public class TarjetasController {
     private TableColumn<?, ?> colURLImagen;
     @FXML
     private TableView<Tarjeta> tblTarjetas;
-<<<<<<< Updated upstream
 
     private ObservableList<Tarjeta> tarjetas;
     private ObservableList<Jugador> filtroTarjetas;
 
-    private ArrayList<Tarjeta> listaTarjetas;
-
-    public void initialize(URL url, ResourceBundle rb) {
-
-        File file = new File("tarjetas.ser");
-        try {
-            file.createNewFile();
-        } catch (IOException E) {
-            System.err.println("No se pudo crear el archivo" + "tarjetas.ser");
-        }
-
-        tarjetas = FXCollections.observableArrayList();
-        //jugadores=leerSerializado();
-        listaTarjetas = deserializar();
-        System.out.println(listaTarjetas);
-        this.tarjetas = listToObservable(listaTarjetas);
-        filtroTarjetas = FXCollections.observableArrayList();
-
-=======
+    private ArrayList<Tarjeta> listaTarjetas; 
     
-    private ObservableList<Tarjeta> tarjetas;
-    private ObservableList<Jugador> filtroTarjetas;
-    
-    private ArrayList<Tarjeta> listaTarjetas;
+  
     
     
      public void initialize(URL url, ResourceBundle rb) {
@@ -112,7 +91,7 @@ public class TarjetasController {
         this.tarjetas=listToObservable(listaTarjetas);
         filtroTarjetas = FXCollections.observableArrayList();
         
->>>>>>> Stashed changes
+
         this.tblTarjetas.setItems(tarjetas);
         this.colJugador.setCellValueFactory(new PropertyValueFactory("jugador"));
         this.colTarjeta.setCellValueFactory(new PropertyValueFactory("idTarjeta"));
@@ -121,20 +100,11 @@ public class TarjetasController {
         this.colGoles.setCellValueFactory(new PropertyValueFactory("goals"));
         this.colCampeonato.setCellValueFactory(new PropertyValueFactory("campeonato"));
     }
-<<<<<<< Updated upstream
 
-    @FXML
-    void agregarPersona(ActionEvent event) {
-        try {
-=======
     
-    
-
     @FXML
     void agregarPersona(ActionEvent event) {
             try {
->>>>>>> Stashed changes
-
             // Cargo la vista
             FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresoTarjeta.fxml"));
 
@@ -152,13 +122,10 @@ public class TarjetasController {
             stage.setScene(scene);
             stage.showAndWait();
 
-            // cojo la persona devuelta
-<<<<<<< Updated upstream
-=======
-          
+            // cojo la persona devuelta      
             
 
->>>>>>> Stashed changes
+
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -166,9 +133,8 @@ public class TarjetasController {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
-
-<<<<<<< Updated upstream
     }
+
 
     void eliminar(ActionEvent event) {
         Tarjeta t = this.tblTarjetas.getSelectionModel().getSelectedItem();
@@ -187,25 +153,20 @@ public class TarjetasController {
             this.tblTarjetas.refresh();
             serializar();
 
-        }
-=======
-        
+        }        
 
     }
 
-    void eliminar(ActionEvent event) {
->>>>>>> Stashed changes
-
-    }
+   
 
     @FXML
     void filtrarNombre(KeyEvent event) {
-
     }
 
     @FXML
     void modificar(ActionEvent event) {
-<<<<<<< Updated upstream
+            
+        
         Tarjeta t = this.tblTarjetas.getSelectionModel().getSelectedItem();
 
         if (t == null) {
@@ -258,43 +219,10 @@ public class TarjetasController {
     public ObservableList<Tarjeta> listToObservable(ArrayList<Tarjeta> listaTarjetas) {
         ObservableList<Tarjeta> tarjetas = FXCollections.observableArrayList();
         for (Tarjeta i : listaTarjetas) {
-=======
-
     }
-    
-    
-     public ObservableList<Tarjeta> listToObservable(ArrayList<Tarjeta> listaTarjetas ){
-        ObservableList<Tarjeta> tarjetas = FXCollections.observableArrayList();
-        for(Tarjeta i: listaTarjetas){
->>>>>>> Stashed changes
-            tarjetas.add(i);
-        }
         return tarjetas;
     }
-
-<<<<<<< Updated upstream
-    private void serializar() {
-        try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("tarjetas.ser"))) {
-            salida.writeObject(listaTarjetas);
-            salida.close();
-        } catch (FileNotFoundException e) {
-            System.err.println("No se encontro el archivo datos.ser");
-        } catch (IOException E) {
-            System.out.println("Se produjo un error al serializar");
-        }
-    }
-
-    private ArrayList<Tarjeta> deserializar() {
-        ArrayList<Tarjeta> tarjetas = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tarjetas.ser"))) {
-            tarjetas = (ArrayList<Tarjeta>) ois.readObject();
-            return tarjetas;
-        } catch (FileNotFoundException ex) {
-            System.err.println("No se encontró el archivo " + "datos.ser");
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Error en el casting del objeto a deserializar");
-        } catch (IOException ex) {
-=======
+    
       private void serializar(){
          try(ObjectOutputStream salida= new ObjectOutputStream(new FileOutputStream("tarjetas.ser"))){
                     salida.writeObject(listaTarjetas);
@@ -312,14 +240,15 @@ public class TarjetasController {
                 tarjetas =   (ArrayList<Tarjeta>) ois.readObject();
                 return tarjetas ;
         } catch (FileNotFoundException ex) {
-            System.err.println("No se encontró el archivo "+"datos.ser");
+            System.err.println("No se encontró el archivo "+"tarjetas.ser");
         } catch (ClassNotFoundException ex) {            
             System.err.println("Error en el casting del objeto a deserializar");
         } catch ( IOException ex) {
->>>>>>> Stashed changes
-            System.err.println("No hay objeto a deserializar o la lista está vacía. Cree al menos un jugador");
+
+            System.err.println("No hay objeto a deserializar o la lista está vacía. Cree al menos una tarjeta");
             return tarjetas;
         }
         return tarjetas;
     }
 }
+
