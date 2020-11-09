@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="316.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controlador.EscogerJugadorController">
+   <children>
+      <ComboBox fx:id="selectJugador" layoutX="83.0" layoutY="58.0" prefWidth="150.0" promptText="Escoge un jugador" />
+      <ComboBox fx:id="selectJugador" layoutX="83.0" layoutY="233.0" prefWidth="150.0" promptText="Escoge un partido" />
+      <Label layoutX="31.0" layoutY="26.0" text="Selecciona el jugador que le pertenece la tarjeta" />
+      <Label layoutX="101.0" layoutY="200.0" text="Selecciona el partido " />
+      <Button fx:id="btnNuevoJugador" layoutX="110.0" layoutY="98.0" mnemonicParsing="false" text="Nuevo jugador" />
+      <Button layoutX="111.0" layoutY="275.0" mnemonicParsing="false" onAction="#nuevoPartido" text="Nuevo Partido" />
+      <Button fx:id="btnSiguiente" layoutX="227.0" layoutY="348.0" mnemonicParsing="false" onAction="#siguiente" text="Siguiente" />
+      <Button fx:id="btnVolver" layoutX="31.0" layoutY="348.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+   </children>
+</AnchorPane>
