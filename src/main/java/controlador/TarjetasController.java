@@ -67,9 +67,10 @@ public class TarjetasController {
     private TableView<Tarjeta> tblTarjetas;
 
     private ObservableList<Tarjeta> tarjetas;
-    private ObservableList<Jugador> filtroTarjetas;
+    private ObservableList<Tarjeta> filtroTarjetas;
 
     private ArrayList<Tarjeta> listaTarjetas; 
+    private ObservableList<Jugador> jugadores;
     
   
     
@@ -107,11 +108,15 @@ public class TarjetasController {
             try {
             FXMLLoader loader1= new FXMLLoader(App.class.getResource("EscogerPartidoJugador.fxml"));
                 Parent root1= loader1.load();
+                EscogerJugadorController controlador1= loader1.getController();
+                System.out.println("Los jugadores estan en tarjetas y son");
+                System.out.println(jugadores);
                 Scene scene1 = new Scene(root1);
                 Stage stage1 = new Stage();
                 stage1.initModality(Modality.APPLICATION_MODAL);
                 stage1.setScene(scene1);
                 stage1.showAndWait();    
+
                 
             // Cargo la vista
             FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresoTarjeta.fxml"));
@@ -266,6 +271,12 @@ public class TarjetasController {
             return tarjetas;
         }
         return tarjetas;
+    }
+
+    void initAtributtes(ObservableList<Jugador> jugadores) {
+        this.jugadores=jugadores;
+        System.out.println("lOS JUGADORES ESTAN EN TARJETAS Y SON");
+        System.out.println(jugadores);
     }
 }
 
