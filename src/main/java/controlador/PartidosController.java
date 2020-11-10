@@ -17,26 +17,44 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import modelo.Jugador;
 
 /**
  * FXML Controller class
  *
  * @author rober
  */
-public class EscogerJugadorController implements Initializable {
+public class PartidosController implements Initializable {
 
     @FXML
-    private ComboBox<Jugador> selectJugador;
+    private Button btnAgregar;
     @FXML
-    private Button btnNuevoJugador;
+    private TableView<?> tblJugadores;
     @FXML
-    private Button btnSiguiente;
+    private TableColumn<?, ?> colImagen;
     @FXML
-    private Button btnVolver;
+    private Button btnModificar;
+    @FXML
+    private Button btnEliminar;
+    @FXML
+    private TextField txtFiltrarNombre;
+    @FXML
+    private TableColumn<?, ?> colPartido;
+    @FXML
+    private TableColumn<?, ?> colFecha;
+    @FXML
+    private TableColumn<?, ?> colMarcador;
+    @FXML
+    private TableColumn<?, ?> colEquipoLocal;
+    @FXML
+    private TableColumn<?, ?> colEquipoVisitante;
+    @FXML
+    private TableColumn<?, ?> colCampeonato;
 
     /**
      * Initializes the controller class.
@@ -47,9 +65,9 @@ public class EscogerJugadorController implements Initializable {
     }    
 
     @FXML
-    private void nuevoPartido(ActionEvent event) {
+    private void agregarPersona(ActionEvent event) {
         try {
-            FXMLLoader loader1= new FXMLLoader(App.class.getResource("Partidos.fxml"));
+            FXMLLoader loader1= new FXMLLoader(App.class.getResource("IngresarPartido.fxml"));
             Parent root1= loader1.load();
             Scene scene1 = new Scene(root1);
             Stage stage1 = new Stage();
@@ -57,16 +75,21 @@ public class EscogerJugadorController implements Initializable {
             stage1.setScene(scene1);  
             stage1.showAndWait();
         } catch (IOException ex) {
-            Logger.getLogger(EscogerJugadorController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PartidosController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     @FXML
-    private void siguiente(ActionEvent event) {
+    private void modificar(ActionEvent event) {
     }
 
     @FXML
-    private void volver(ActionEvent event) {
+    private void eliminar(ActionEvent event) {
+    }
+
+    @FXML
+    private void filtrarNombre(KeyEvent event) {
     }
     
 }
