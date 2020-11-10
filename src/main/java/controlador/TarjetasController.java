@@ -109,34 +109,16 @@ public class TarjetasController {
             FXMLLoader loader1= new FXMLLoader(App.class.getResource("EscogerPartidoJugador.fxml"));
                 Parent root1= loader1.load();
                 EscogerJugadorController controlador1= loader1.getController();
-                System.out.println("Los jugadores estan en tarjetas y son");
-                System.out.println(jugadores);
+                controlador1.initAtribute(tarjetas);
                 Scene scene1 = new Scene(root1);
                 Stage stage1 = new Stage();
                 stage1.initModality(Modality.APPLICATION_MODAL);
                 stage1.setScene(scene1);
                 stage1.showAndWait();    
 
+                System.out.println("Se cerro el escoger");
                 
-            // Cargo la vista
-            FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresoTarjeta.fxml"));
-
-            // Cargo la ventana
-            Parent root = loader.load();
-
-            // Cojo el controlador
-            IngresoTarjetaController controlador = loader.getController();
-            controlador.initAtributtes(tarjetas);
-
-            // Creo el Scene
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setScene(scene);
-            stage.showAndWait();
-
-            // cojo la persona devuelta      
-            
+          
 
 
         } catch (IOException e) {
@@ -277,6 +259,11 @@ public class TarjetasController {
         this.jugadores=jugadores;
         System.out.println("lOS JUGADORES ESTAN EN TARJETAS Y SON");
         System.out.println(jugadores);
+    }
+    
+    TableView<Tarjeta> getTblTarjetas(){
+        return tblTarjetas;
+        
     }
 }
 

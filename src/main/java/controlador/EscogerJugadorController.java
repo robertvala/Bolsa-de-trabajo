@@ -60,6 +60,7 @@ public class EscogerJugadorController implements Initializable {
     private Button selecJugador;
     @FXML
     private Button selectPartido;
+    ObservableList<Tarjeta> tarjetas;
 
     /**
      * Initializes the controller class.
@@ -105,5 +106,42 @@ public class EscogerJugadorController implements Initializable {
     @FXML
     private void agregarPartido(MouseEvent event) {
     }
+    
+    public void initAtribute(ObservableList<Tarjeta> tarjetas){
+        this.tarjetas=tarjetas;
+    }
+
+    @FXML
+    private void siguiente(ActionEvent event) {
+        try {
+            // Cargo la vista
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresoTarjeta.fxml"));
+
+            // Cargo la ventana
+            Parent root = loader.load();
+
+            // Cojo el controlador
+            IngresoTarjetaController controlador = loader.getController();
+            controlador.initAtributtes(tarjetas);
+
+            // Creo el Scene
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);
+            stage.showAndWait();
+
+            // cojo la persona devuelta      
+        } catch (IOException ex) {
+            Logger.getLogger(EscogerJugadorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+    }
+
+    @FXML
+    private void volver(ActionEvent event) {
+    }
+    
+    
 
 }
