@@ -10,7 +10,7 @@
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PartidosController">
    <children>
       <Button fx:id="btnAgregar" layoutX="40.0" layoutY="666.0" mnemonicParsing="false" onAction="#agregarPersona" prefHeight="25.0" prefWidth="149.0" text="Agregar partido" />
-      <TableView fx:id="tblJugadores" layoutX="14.0" layoutY="63.0" prefHeight="469.0" prefWidth="1043.0">
+      <TableView fx:id="tbPartidos" layoutX="14.0" layoutY="63.0" prefHeight="469.0" prefWidth="1043.0">
         <columns>
             <TableColumn fx:id="colImagen" prefWidth="130.39999103546143" />
           <TableColumn fx:id="colPartido" prefWidth="137.59999084472656" text="Partido" />
