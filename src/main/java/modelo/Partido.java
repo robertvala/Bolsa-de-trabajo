@@ -6,6 +6,7 @@
 package modelo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,16 @@ import java.time.LocalDate;
 public class Partido {
     private String nombre;
     private LocalDate fecha;
-    private int goles;
+    private Equipo equipoLocal;
+    private Equipo equipoVisitante;
+    private String idPartido;    
+    private int golesEquipoLocal;
+    private int golesEquipoVisitante;
+    private Campeonato campeonato;
+    private ArrayList<Jugador> goleadoresEquipoLocal;
+    private ArrayList<Jugador> goleadoresEquipoVisitante;
+    private ArrayList<Jugador> asistidoresEquipoLocal;
+    private ArrayList<Jugador> asistidoresEquipoVisitante;
+    
     
 }

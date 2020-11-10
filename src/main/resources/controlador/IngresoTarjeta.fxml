@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< Updated upstream
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.IngresoTarjetaController">
-=======
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.IngresoTarjetaController">
->>>>>>> Stashed changes
+
+
+
    <children>
       <Label prefHeight="35.0" prefWidth="1081.0" text="Ingreso de tarjeta" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
          <font>
@@ -128,7 +129,7 @@
                         <Spinner fx:id="spDefensiveDuels" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+                  <HBox alignment="CENTER" prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
@@ -241,10 +242,10 @@
                         <Spinner fx:id="spVerticalPasses" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+                  <HBox alignment="CENTER" prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
                </children>
             </VBox>
-            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
                <children>
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
                      <children>
@@ -357,7 +358,7 @@
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
                </children>
             </VBox>
-            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="260.0" spacing="5.0">
                <children>
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
                      <children>
@@ -427,12 +428,6 @@
                   </HBox>
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label prefHeight="36.0" prefWidth="242.0" text="Aerial duels" />
-                        <Spinner fx:id="spAerialDuelsWon" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
-                     <children>
                         <Label prefHeight="36.0" prefWidth="242.0" text="Loose ball duels" />
                         <Spinner fx:id="spLoosBallDuels1" />
                      </children>
@@ -453,9 +448,13 @@
                         <Label prefHeight="36.0" prefWidth="242.0" text="Offensive duels won" />
                         <Spinner fx:id="spLooseBallDuelsWon1" />
                      </children></HBox>
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
-                  <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0" />
+                  <Button mnemonicParsing="false" text="Clear" />
+                  <Button mnemonicParsing="false" text="Guardar" />
+                  <Button mnemonicParsing="false" text="Salir" />
                </children>
+               <effect>
+                  <Glow />
+               </effect>
             </VBox>
          </children>
          <padding>

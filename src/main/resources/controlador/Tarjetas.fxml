@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.TarjetasController">
    <children>
-      <Button fx:id="btnAgregar" layoutX="40.0" layoutY="666.0" mnemonicParsing="false" onAction="#agregarPersona" prefHeight="25.0" prefWidth="149.0" text="Agregar persona" />
+      <Button fx:id="btnAgregar" layoutX="40.0" layoutY="666.0" mnemonicParsing="false" onAction="#agregarPersona" prefHeight="25.0" prefWidth="149.0" text="Agregar Tarjeta" />
       <TableView fx:id="tblTarjetas" layoutX="14.0" layoutY="63.0" prefHeight="469.0" prefWidth="1043.0">
         <columns>
             <TableColumn fx:id="colURLImagen" prefWidth="130.39999103546143" />
@@ -21,9 +21,9 @@
             <TableColumn fx:id="colGoles" prefWidth="133.60003662109375" text="Goles" />
         </columns>
       </TableView>
-      <Button fx:id="btnModificar" layoutX="216.0" layoutY="666.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="169.0" text="Modificar persona" />
-      <Button fx:id="btnEliminar" layoutX="412.0" layoutY="666.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="156.0" text="Eliminar persona" />
-      <Label layoutX="40.0" layoutY="29.0" text="Filtrar por nombre:" />
+      <Button fx:id="btnModificar" layoutX="216.0" layoutY="666.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="169.0" text="Modificar tarjeta" />
+      <Button fx:id="btnEliminar" layoutX="412.0" layoutY="666.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="156.0" text="Eliminar tarjeta" />
+      <Label layoutX="40.0" layoutY="29.0" text="Filtrar por Jugador:" />
       <TextField fx:id="txtFiltrarNombre" layoutX="210.0" layoutY="24.0" onKeyReleased="#filtrarNombre" />
    </children>
 </AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PartidosController">
+   <children>
+      <Button fx:id="btnAgregar" layoutX="40.0" layoutY="666.0" mnemonicParsing="false" onAction="#agregarPersona" prefHeight="25.0" prefWidth="149.0" text="Agregar partido" />
+      <TableView fx:id="tblJugadores" layoutX="14.0" layoutY="63.0" prefHeight="469.0" prefWidth="1043.0">
+        <columns>
+            <TableColumn fx:id="colImagen" prefWidth="130.39999103546143" />
+          <TableColumn fx:id="colPartido" prefWidth="137.59999084472656" text="Partido" />
+          <TableColumn fx:id="colFecha" prefWidth="186.40003967285156" text="Fecha" />
+            <TableColumn fx:id="colMarcador" prefWidth="110.40008544921875" text="Marcador" />
+            <TableColumn fx:id="colEquipoLocal" prefWidth="133.60003662109375" text="Equipo Local" />
+            <TableColumn fx:id="colEquipoVisitante" prefWidth="133.60003662109375" text="Equipo Visitante" />
+            <TableColumn fx:id="colCampeonato" prefWidth="133.60003662109375" text="Campeonato" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnModificar" layoutX="216.0" layoutY="666.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="169.0" text="Modificar partido" />
+      <Button fx:id="btnEliminar" layoutX="412.0" layoutY="666.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="156.0" text="Eliminar partido" />
+      <Label layoutX="40.0" layoutY="29.0" text="Filtrar por Equipo:" />
+      <TextField fx:id="txtFiltrarNombre" layoutX="210.0" layoutY="24.0" onKeyReleased="#filtrarNombre" />
+   </children>
+</AnchorPane>

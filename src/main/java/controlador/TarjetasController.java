@@ -105,6 +105,14 @@ public class TarjetasController {
     @FXML
     void agregarPersona(ActionEvent event) {
             try {
+            FXMLLoader loader1= new FXMLLoader(App.class.getResource("EscogerPartidoJugador.fxml"));
+                Parent root1= loader1.load();
+                Scene scene1 = new Scene(root1);
+                Stage stage1 = new Stage();
+                stage1.initModality(Modality.APPLICATION_MODAL);
+                stage1.setScene(scene1);
+                stage1.showAndWait();    
+                
             // Cargo la vista
             FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresoTarjeta.fxml"));
 
@@ -177,6 +185,15 @@ public class TarjetasController {
             alert.showAndWait();
         } else {
             try {
+                
+                FXMLLoader loader1= new FXMLLoader(App.class.getResource("EscogerPartidoJugador.fxml"));
+                Parent root1= loader1.load();
+                Scene scene1 = new Scene(root1);
+                Stage stage1 = new Stage();
+                stage1.initModality(Modality.APPLICATION_MODAL);
+                stage1.setScene(scene1);
+                stage1.showAndWait();
+                
 
                 // Cargo la vista
                 FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresoTarjeta.fxml"));
