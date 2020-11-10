@@ -445,8 +445,8 @@
                      </children></HBox>
                   <HBox prefHeight="36.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label prefHeight="36.0" prefWidth="242.0" text="Offensive duels won" />
-                        <Spinner fx:id="spLooseBallDuelsWon1" />
+                        <Label fx:id="spOffensiveDuelsWon" prefHeight="36.0" prefWidth="242.0" text="Offensive duels won" />
+                        <Spinner fx:id="spOffensiveDuelsWon" />
                      </children></HBox>
                   <Button mnemonicParsing="false" text="Clear" />
                   <Button mnemonicParsing="false" text="Guardar" />
