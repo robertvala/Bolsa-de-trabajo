@@ -68,6 +68,8 @@ public class PersonasController implements Initializable {
     private ArrayList<Jugador> listaJugadores=new ArrayList<>();;
     
     //private final CRUDFirebase cRUDFirebase = new CRUDFirebase();
+    @FXML
+    private Button btnAceptar;
   
 
     /**
@@ -76,22 +78,25 @@ public class PersonasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        File file= new File("datos.ser");
-        try{
+            File file = new File("datos.ser");
+        try {
             file.createNewFile();
+        } catch (IOException E) {
+            System.err.println("No se pudo crear el archivo" + "datos.ser");
         }
-        catch( IOException E){
-            System.err.println("No se pudo crear el archivo"+"datos.ser");
-        }
-        
         jugadores = FXCollections.observableArrayList();
-        //jugadores=leerSerializado();
-        listaJugadores=deserializar();
-        System.out.println(listaJugadores);
-        this.jugadores=listToObservable(listaJugadores);
-        filtroJugadores = FXCollections.observableArrayList();
+        listaJugadores = deserializar();
+        this.jugadores = listToObservable(listaJugadores);
+        System.out.println("Aqui se deben imprimir los jugadores");
         
+        System.out.println(jugadores);
+       
+       
+        
+          
+        filtroJugadores = FXCollections.observableArrayList();
         this.tblJugadores.setItems(jugadores);
+        
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombres"));
         this.colApellidos.setCellValueFactory(new PropertyValueFactory("apellidos"));
         this.colEdad.setCellValueFactory(new PropertyValueFactory("edad"));
@@ -127,8 +132,8 @@ public class PersonasController implements Initializable {
             // cojo la persona devuelta
             Jugador j = controlador.getJugador();
             if (j != null) {
-                jugadores.add(j);
-                listaJugadores.add(j);
+                this.jugadores.add(j);
+                this.listaJugadores.add(j);
                 if (j.getNombres().toLowerCase().contains(this.txtFiltrarNombre.getText().toLowerCase())) {
                     this.filtroJugadores.add(j);
                 }
@@ -272,6 +277,7 @@ public class PersonasController implements Initializable {
          try(ObjectOutputStream salida= new ObjectOutputStream(new FileOutputStream("datos.ser"))){
                     salida.writeObject(listaJugadores);
                     salida.close();
+                    System.out.println("Se serializo en ingreso de jugadores");
                 }catch(FileNotFoundException e){
                     System.err.println("No se encontro el archivo datos.ser");
                 }catch(IOException E){
@@ -293,6 +299,29 @@ public class PersonasController implements Initializable {
             return jugadores;
         }
         return jugadores;
+    }
+    
+    public ObservableList<Jugador> getJugadores(){
+        return this.jugadores;
+    }
+    
+    public ArrayList<Jugador> getListaJugadores(){
+        return this.listaJugadores;
+    }    
+    
+        public void initAtributtes(ObservableList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+        this.tblJugadores.setItems(jugadores);
+    }
+
+    @FXML
+    private void aceptar(ActionEvent event) {
+        Stage stage = (Stage) this.btnAceptar.getScene().getWindow();
+        stage.close();
+    }
+    
+    public TableView<Jugador> getTableView(){
+        return this.tblJugadores;
     }
 
 

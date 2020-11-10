@@ -315,7 +315,14 @@ public class Jugador implements Serializable {
 
         
     }
-     
+
+    @Override
+    public String toString() {
+        return "Jugador{" +  " Nombres=" + nombres + ", Apellidos=" + apellidos + ", Edad=" + edad + ",Equipo=" + equipo + ", Posicion=" + posicion + ", Ciudad=" + ciudad + '}';
+    }
+
+  
+   
 
 
         
