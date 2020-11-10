@@ -25,6 +25,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -68,7 +69,7 @@ public class PartidosController implements Initializable {
     private TableColumn<?, ?> colCampeonato;
     
     private ObservableList<Partido> partidos;
-    private ObservableList<Partido> filtropartidos;
+    private ObservableList<Partido> filtroPartidos;
     private ArrayList<Partido> listaPartidos=new ArrayList<>();;
     @FXML
     private TableView<?> tbPartidos;
@@ -90,7 +91,7 @@ public class PartidosController implements Initializable {
         listaPartidos=deserializar();
         System.out.println(listaPartidos);
         this.partidos=listToObservable(listaPartidos);
-        filtropartidos = FXCollections.observableArrayList();
+        filtroPartidos = FXCollections.observableArrayList();
         
         this.tblPartidos.setItems(partidos);
         this.colPartido.setCellValueFactory(new PropertyValueFactory("partidos"));
@@ -118,14 +119,14 @@ public class PartidosController implements Initializable {
             stage1.setScene(scene1);  
             stage1.showAndWait();
             //cojo el partido devuelta
-            Partido p= controlador.getPartido();
+            Partido p= controlador.getPartidos();
             if (p != null) {
                 partidos.add(p);
                 listaPartidos.add(p);
-                if (p.getPartidos().toLowerCase().contains(this.txtFiltrarNombre.getText().toLowerCase())) {
-                    this.filtroJugadores.add(j);
+                if (p.getPartidos().toLowerCase().contains(this.txtFiltrarPartido.getText().toLowerCase())) {
+                    this.filtroPartidos.add(j);
                 }
-                this.tblJugadores.refresh();
+                this.tblPartidos.refresh();
                 
                // cRUDFirebase.addFirebase(j);
 
@@ -134,17 +135,94 @@ public class PartidosController implements Initializable {
                 
             }
         } catch (IOException ex) {
-            Logger.getLogger(PartidosController.class.getName()).log(Level.SEVERE, null, ex);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
         }
         
     }
 
     @FXML
+    private void filtrarPartidos (KeyEvent event) {
+    }
     private void modificar(ActionEvent event) {
+        Partido p = this.tblPartidos.getSelectionModel().getSelectedItem();
+
+        if (p == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debes seleccionar una persona");
+            alert.showAndWait();
+        } else {
+
+            try {
+
+                // Cargo la vista
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("PersonaDialogVista.fxml"));
+
+                // Cargo la ventana
+                Parent root = loader.load();
+
+                // Cojo el controlador
+                PersonaDialogControlador controlador = loader.getController();
+                controlador.initAtributtes(partidos, p);
+
+                // Creo el Scene
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.showAndWait();
+
+                // cojo la persona devuelta
+                Partido pSeleccionado = controlador.getPartidos();
+                if (pSeleccionado != null) {
+                    if (!pSeleccionado.getPartidos().toLowerCase().contains(this.txtFiltrarPartido.getText().toLowerCase())) {
+                        this.filtroPartidos.remove(pSeleccionado);
+                    }
+                    this.tblPartidos.refresh();
+                    serializar();
+                }
+
+            } catch (IOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
+            }
+
+        }
     }
 
     @FXML
     private void eliminar(ActionEvent event) {
+        Partido p = this.tblPartidos.getSelectionModel().getSelectedItem();
+
+        if (p == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debes seleccionar una persona");
+            alert.showAndWait();
+        } else {
+            // Elimino la persona
+            this.partidos.remove(p);
+            this.listaPartidos.remove(p);
+            this.filtroPartidos.remove(p);
+            this.tblPartidos.refresh();
+            serializar();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Info");
+            alert.setContentText("Partido eliminado");
+            alert.showAndWait();
+
+        }
     }
 
     private void serializar(){
@@ -177,5 +255,11 @@ public class PartidosController implements Initializable {
     @FXML
     private void filtrarPartido(KeyEvent event) {
     }
-    
+    public ObservableList<Partido> listToObservable(ArrayList<Partido> listaPartidos ){
+        ObservableList<Partido> partidos = FXCollections.observableArrayList();
+        for(Partido i: listaPartidos){
+            partidos.add(i);
+        }
+        return partidos;
+    }
 }

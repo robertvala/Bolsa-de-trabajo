@@ -24,6 +24,6 @@
       <Button fx:id="btnModificar" layoutX="216.0" layoutY="666.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="169.0" text="Modificar partido" />
       <Button fx:id="btnEliminar" layoutX="412.0" layoutY="666.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="156.0" text="Eliminar partido" />
       <Label layoutX="40.0" layoutY="29.0" text="Filtrar por Equipo:" />
-      <TextField fx:id="txtFiltrarNombre" layoutX="210.0" layoutY="24.0" onKeyReleased="#filtrarNombre" />
+      <TextField fx:id="txtFiltrarPartido" layoutX="210.0" layoutY="24.0" onKeyReleased="#filtrarNombre" />
    </children>
 </AnchorPane>

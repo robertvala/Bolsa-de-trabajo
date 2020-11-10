@@ -26,6 +26,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.Jugador;
+import modelo.Partido;
 import modelo.Persona;
 
 public class PersonaDialogControlador implements Initializable {
@@ -216,6 +217,14 @@ public class PersonaDialogControlador implements Initializable {
         // Cerrar la ventana
         Stage stage = (Stage) this.btnGuardar.getScene().getWindow();
         stage.close();
+    }
+
+    void initAtributtes(ObservableList<Partido> partidos) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void initAtributtes(ObservableList<Partido> partidos, Partido p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
