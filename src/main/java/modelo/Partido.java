@@ -7,14 +7,15 @@ package modelo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rober
  */
-public class Partido {
-    private String nombre;
+public class Partido implements Serializable{
+    private String partidos;
     private LocalDate fecha;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
@@ -26,25 +27,67 @@ public class Partido {
     private ArrayList<Jugador> goleadoresEquipoVisitante;
     private ArrayList<Jugador> asistidoresEquipoLocal;
     private ArrayList<Jugador> asistidoresEquipoVisitante;
+    
+    //constructor
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.nombre);
-        hash = 13 * hash + Objects.hashCode(this.fecha);
-        hash = 13 * hash + Objects.hashCode(this.equipoLocal);
-        hash = 13 * hash + Objects.hashCode(this.equipoVisitante);
-        hash = 13 * hash + Objects.hashCode(this.idPartido);
-        hash = 13 * hash + this.golesEquipoLocal;
-        hash = 13 * hash + this.golesEquipoVisitante;
-        hash = 13 * hash + Objects.hashCode(this.campeonato);
-        hash = 13 * hash + Objects.hashCode(this.goleadoresEquipoLocal);
-        hash = 13 * hash + Objects.hashCode(this.goleadoresEquipoVisitante);
-        hash = 13 * hash + Objects.hashCode(this.asistidoresEquipoLocal);
-        hash = 13 * hash + Objects.hashCode(this.asistidoresEquipoVisitante);
-        return hash;
+    public Partido(String partidos, Equipo equipoLocal, Equipo equipoVisitante, int golesEquipoLocal, int golesEquipoVisitante, Campeonato campeonato) {
+        this.partidos = partidos;
+        this.equipoLocal = equipoLocal;
+        this.equipoVisitante = equipoVisitante;
+        this.golesEquipoLocal = golesEquipoLocal;
+        this.golesEquipoVisitante = golesEquipoVisitante;
+        this.campeonato = campeonato;
+    }
+    // get  y set
+
+    public String getPartidos() {
+        return partidos;
     }
 
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public Equipo getEquipoLocal() {
+        return equipoLocal;
+    }
+
+    public Equipo getEquipoVisitante() {
+        return equipoVisitante;
+    }
+
+    public String getIdPartido() {
+        return idPartido;
+    }
+
+    public int getGolesEquipoLocal() {
+        return golesEquipoLocal;
+    }
+
+    public int getGolesEquipoVisitante() {
+        return golesEquipoVisitante;
+    }
+
+    public Campeonato getCampeonato() {
+        return campeonato;
+    }
+
+    public ArrayList<Jugador> getGoleadoresEquipoLocal() {
+        return goleadoresEquipoLocal;
+    }
+
+    public ArrayList<Jugador> getGoleadoresEquipoVisitante() {
+        return goleadoresEquipoVisitante;
+    }
+
+    public ArrayList<Jugador> getAsistidoresEquipoLocal() {
+        return asistidoresEquipoLocal;
+    }
+
+    public ArrayList<Jugador> getAsistidoresEquipoVisitante() {
+        return asistidoresEquipoVisitante;
+    }
+    //equals
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -57,40 +100,26 @@ public class Partido {
             return false;
         }
         final Partido other = (Partido) obj;
-        if (this.golesEquipoLocal != other.golesEquipoLocal) {
+        if (this.equipoLocal != other.equipoLocal) {
+            return false;
+        }
+        if (this.equipoVisitante != other.equipoVisitante) {
             return false;
         }
         if (this.golesEquipoVisitante != other.golesEquipoVisitante) {
             return false;
         }
-        if (!Objects.equals(this.fecha, other.fecha)) {
+        if (!Objects.equals(this.partidos, other.partidos)) {
             return false;
         }
-        if (!Objects.equals(this.equipoLocal, other.equipoLocal)) {
-            return false;
-        }
-        if (!Objects.equals(this.equipoVisitante, other.equipoVisitante)) {
+        if (!Objects.equals(this.golesEquipoLocal, other.golesEquipoLocal)) {
             return false;
         }
         if (!Objects.equals(this.campeonato, other.campeonato)) {
             return false;
         }
-        if (!Objects.equals(this.goleadoresEquipoLocal, other.goleadoresEquipoLocal)) {
-            return false;
-        }
-        if (!Objects.equals(this.goleadoresEquipoVisitante, other.goleadoresEquipoVisitante)) {
-            return false;
-        }
-        if (!Objects.equals(this.asistidoresEquipoLocal, other.asistidoresEquipoLocal)) {
-            return false;
-        }
-        if (!Objects.equals(this.asistidoresEquipoVisitante, other.asistidoresEquipoVisitante)) {
-            return false;
-        }
+        
         return true;
     }
-    
-    
-    
     
 }
