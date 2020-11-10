@@ -110,7 +110,7 @@ public class PartidosController implements Initializable {
             //cargo ventana
             Parent root1= loader1.load();
             // Cojo el controlador
-            PersonaDialogControlador controlador = loader1.getController();
+           IngresarPartidoController controlador = loader1.getController();
             controlador.initAtributtes(partidos);
             //cargo el scene
             Scene scene1 = new Scene(root1);
@@ -119,12 +119,12 @@ public class PartidosController implements Initializable {
             stage1.setScene(scene1);  
             stage1.showAndWait();
             //cojo el partido devuelta
-            Partido p= controlador.getPartidos();
+            Partido p= controlador.getPartido();
             if (p != null) {
                 partidos.add(p);
                 listaPartidos.add(p);
                 if (p.getPartidos().toLowerCase().contains(this.txtFiltrarPartido.getText().toLowerCase())) {
-                    this.filtroPartidos.add(j);
+                    this.filtroPartidos.add(p);
                 }
                 this.tblPartidos.refresh();
                 
@@ -138,7 +138,7 @@ public class PartidosController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Error");
-            alert.setContentText(e.getMessage());
+            alert.setContentText(ex.getMessage());
             alert.showAndWait();
         }
         
@@ -161,13 +161,13 @@ public class PartidosController implements Initializable {
             try {
 
                 // Cargo la vista
-                FXMLLoader loader = new FXMLLoader(App.class.getResource("PersonaDialogVista.fxml"));
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("IngresarPartido.fxml"));
 
                 // Cargo la ventana
                 Parent root = loader.load();
 
                 // Cojo el controlador
-                PersonaDialogControlador controlador = loader.getController();
+                IngresarPartidoController controlador = loader.getController();
                 controlador.initAtributtes(partidos, p);
 
                 // Creo el Scene
@@ -178,7 +178,7 @@ public class PartidosController implements Initializable {
                 stage.showAndWait();
 
                 // cojo la persona devuelta
-                Partido pSeleccionado = controlador.getPartidos();
+                Partido pSeleccionado = controlador.getPartido();
                 if (pSeleccionado != null) {
                     if (!pSeleccionado.getPartidos().toLowerCase().contains(this.txtFiltrarPartido.getText().toLowerCase())) {
                         this.filtroPartidos.remove(pSeleccionado);

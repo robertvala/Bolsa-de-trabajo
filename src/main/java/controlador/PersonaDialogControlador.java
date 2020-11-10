@@ -219,9 +219,7 @@ public class PersonaDialogControlador implements Initializable {
         stage.close();
     }
 
-    void initAtributtes(ObservableList<Partido> partidos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     void initAtributtes(ObservableList<Partido> partidos, Partido p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
