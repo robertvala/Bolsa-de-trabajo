@@ -103,8 +103,8 @@ public class EscogerJugadorController implements Initializable {
         }
     }
 
-    @FXML
-    private void agregarPartido(MouseEvent event) {
+    private void agregarPartido(MouseEvent event) throws IOException {
+        
     }
     
     public void initAtribute(ObservableList<Tarjeta> tarjetas){
@@ -140,6 +140,21 @@ public class EscogerJugadorController implements Initializable {
 
     @FXML
     private void volver(ActionEvent event) {
+    }
+
+    @FXML
+    private void seleccionarPartido(MouseEvent event) {
+        try {
+            FXMLLoader loader= new FXMLLoader(App.class.getResource("Campeonatos.fxml"));
+            Parent root= loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);  
+            stage.showAndWait();
+        } catch (IOException ex) {
+            Logger.getLogger(EscogerJugadorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" focusTraversable="true" maxHeight="659.0" maxWidth="550.0" minHeight="345.0" minWidth="185.0" prefHeight="659.0" prefWidth="550.0" snapToPixel="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.IngresoCampeonatosController">
+   <children>
+      <Label layoutX="230.0" layoutY="262.0" text="Fecha de cierre" />
+      <Label layoutX="231.0" layoutY="175.0" text="Fecha de Inicio" />
+      <Label layoutX="205.0" layoutY="85.0" text="Nombre del campeonato" />
+      <TextField fx:id="txtNombreCampeonato" layoutX="180.0" layoutY="122.0" prefHeight="29.0" prefWidth="187.0">
+         <effect>
+            <Glow level="0.45" />
+         </effect></TextField>
+      <Button fx:id="btnGuardar" layoutX="182.0" layoutY="573.0" mnemonicParsing="false" onAction="#guardar" prefHeight="29.0" prefWidth="187.0" text="Guardar" />
+      <Button fx:id="btnSalir" layoutX="182.0" layoutY="616.0" mnemonicParsing="false" onAction="#salir" prefHeight="29.0" prefWidth="187.0" text="Salir" />
+      <Label layoutX="185.0" layoutY="27.0" text="Ingreso de campeonato">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="257.0" layoutY="350.0" text="WFV" />
+      <DatePicker fx:id="dateFechaCierre" layoutX="174.0" layoutY="305.0" prefHeight="25.0" prefWidth="187.0" />
+      <DatePicker fx:id="dateFechaInicio" layoutX="177.0" layoutY="209.0" prefHeight="25.0" prefWidth="187.0" />
+      <Spinner fx:id="spWFV" layoutX="178.0" layoutY="378.0" prefHeight="25.0" prefWidth="187.0" />
+      <Label layoutX="213.0" layoutY="437.0" text="Pais del campeonato" />
+      <ChoiceBox fx:id="selectPais" layoutX="179.0" layoutY="476.0" prefHeight="25.0" prefWidth="187.0" />
+   </children>
+</AnchorPane>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Spinner?>
@@ -16,8 +14,7 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="164.0" layoutY="58.0" text="Seleccion el campeontao al que pertence el partido" />
-      <ChoiceBox fx:id="selectCampeonato" layoutX="225.0" layoutY="82.0" prefWidth="150.0" />
+      <Label layoutX="164.0" layoutY="58.0" text="Seleccion el campeonato al que pertence el partido" />
       <Label layoutX="56.0" layoutY="122.0" text="Equipo Local" AnchorPane.leftAnchor="56.0">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -29,8 +26,6 @@
          </font>
       </Label>
       <Spinner fx:id="spGolesLocal" layoutX="70.0" layoutY="215.0" prefHeight="26.0" prefWidth="66.0" />
-      <ComboBox fx:id="selectEquipoLocal" layoutX="27.0" layoutY="150.0" prefHeight="26.0" prefWidth="157.0" promptText="Selecciona un equipo" />
-      <ComboBox fx:id="selectEquipovisitante" layoutX="419.0" layoutY="150.0" prefHeight="26.0" prefWidth="157.0" promptText="Selecciona un equipo" />
       <Label layoutX="80.0" layoutY="190.0" text="Goles">
          <font>
             <Font size="14.0" />
@@ -69,5 +64,8 @@
       <Button fx:id="btnGuardar" layoutX="507.0" layoutY="628.0" mnemonicParsing="false" onMouseClicked="#guardar" text="Guardar" />
       <Button fx:id="btnSalie" layoutX="30.0" layoutY="628.0" mnemonicParsing="false" onMouseClicked="#salir" text="Salir" />
       <Button layoutX="244.0" layoutY="628.0" mnemonicParsing="false" text="Generar marcador" />
+      <Button layoutX="258.0" layoutY="83.0" mnemonicParsing="false" text="Campeonato" />
+      <Button layoutX="28.0" layoutY="151.0" minWidth="120.0" mnemonicParsing="false" text="Selecciona equipo local" />
+      <Button layoutX="415.0" layoutY="151.0" minWidth="120.0" mnemonicParsing="false" text="Selecciona equipo visitante" />
    </children>
 </AnchorPane>

@@ -5,12 +5,18 @@
  */
 package modelo;
 
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author rober
  */
 public class Equipo {
     private int posicion;
+    private Campeonato campeonato;
+    private String nombre;
+    private int WFV;
+    private ObservableList<Jugador> jugadores;
  
     
     public double puntosExtra(){
