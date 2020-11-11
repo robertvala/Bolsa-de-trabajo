@@ -145,8 +145,6 @@ public class PartidosController implements Initializable {
     }
 
     @FXML
-    private void filtrarPartidos (KeyEvent event) {
-    }
     private void modificar(ActionEvent event) {
         Partido p = this.tblPartidos.getSelectionModel().getSelectedItem();
 
@@ -252,14 +250,15 @@ public class PartidosController implements Initializable {
         return partidos;
     }
 
-    @FXML
-    private void filtrarPartido(KeyEvent event) {
-    }
     public ObservableList<Partido> listToObservable(ArrayList<Partido> listaPartidos ){
         ObservableList<Partido> partidos = FXCollections.observableArrayList();
         for(Partido i: listaPartidos){
             partidos.add(i);
         }
         return partidos;
+    }
+
+    @FXML
+    private void filtrarNombre(KeyEvent event) {
     }
 }

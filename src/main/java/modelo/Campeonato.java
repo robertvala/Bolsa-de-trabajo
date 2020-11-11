@@ -13,12 +13,13 @@ import java.util.ArrayList;
  * @author rober
  */
 public class Campeonato {
+    
     private LocalDate fechainicio;
     private LocalDate fechaFin;
     private String nombre;
     private int valorWFV;
     private ArrayList<Equipo> equipos;
-    private String tipo;
+    private String pais;
 
    
 
@@ -46,13 +47,38 @@ public class Campeonato {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getValorWFV() {
+        return valorWFV;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setValorWFV(int valorWFV) {
+        this.valorWFV = valorWFV;
     }
+
+    public ArrayList<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(ArrayList<Equipo> equipos) {
+        this.equipos = equipos;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public Campeonato(LocalDate fechainicio, LocalDate fechaFin, String nombre, int valorWFV, String pais) {
+        this.fechainicio = fechainicio;
+        this.fechaFin = fechaFin;
+        this.nombre = nombre;
+        this.valorWFV = valorWFV;
+        this.pais = pais;
+    }
+
     
     
     

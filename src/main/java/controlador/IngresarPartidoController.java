@@ -15,6 +15,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.input.MouseEvent;
+import modelo.Campeonato;
 import modelo.Partido;
 
 /**
@@ -25,13 +26,7 @@ import modelo.Partido;
 public class IngresarPartidoController implements Initializable {
 
     @FXML
-    private ChoiceBox<?> selectCampeonato;
-    @FXML
     private Spinner<?> spGolesLocal;
-    @FXML
-    private ComboBox<?> selectEquipoLocal;
-    @FXML
-    private ComboBox<?> selectEquipovisitante;
     @FXML
     private Spinner<?> spGolesVisitantes;
     @FXML
@@ -69,4 +64,6 @@ public class IngresarPartidoController implements Initializable {
     void initAtributtes(ObservableList<Partido> partidos,Partido partido){
         
     }
+
+    
 }
